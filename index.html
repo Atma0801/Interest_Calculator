@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Loan Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Loan Interest Calculator</h1>
+        <form method="POST">
+            <label for="principal">Principal Amount:</label>
+            <input type="number" id="principal" name="principal" step="0.01" required>
+            
+            <label for="time">Time (Years):</label>
+            <input type="number" id="time" name="time" step="0.1" required>
+            
+            <label for="rate">Interest Rate (%):</label>
+            <input type="number" id="rate" name="rate" step="0.01" required>
+            
+            <label for="bank">Enter Bank Name:</label>
+            <input type="text" id="bank" name="bank" placeholder="Type bank name" required>
+
+            <button type="submit">Calculate</button>
+        </form>
+
+        {% if total is not none %}
+            <h2>Total Amount Repayable: ₹{{ total }}</h2>
+        {% else %}
+        
+        {% endif %}
+    </div>
+</body>
+</html>
